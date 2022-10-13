@@ -1,0 +1,79 @@
+const models = require('../../models')
+const jwt_decode = require('jwt-decode')
+const { Op } = require("sequelize");
+
+const addWishlist = async (req, res) => {
+    try {
+
+        const token = req.headers['authorization']
+        const splitToken = token.split('auth ')[1]
+        const decode = jwt_decode(splitToken);
+        let idUser = decode.id
+        const idProduct = req.body.idProduct
+
+        //!
+        const product = await models.tbl_product.findOne({
+            include: [
+                {
+                    model: models.tbl_kategori,
+                    attributes: ['nama_kategori']
+                },
+                {
+                    model: models.tbl_user,
+                    attributes: ['nama_lengkap', 'kota']
+                },
+                {
+                    model: models.tbl_gambar,
+                    attributes: ['url']
+                }
+            ],
+            where: {
+                id: idProduct,
+                berhasil_dijual: false,
+                id_user: { [Op.ne]: idUser }
+            }
+        })
+        //!
+
+        //!
+        const wishlist = await models.tbl_wishlist.findOne({
+            where: {
+                [Op.and]: [
+                    { id_user: idUser },
+                    { id_product: idProduct }
+                ]
+
+            }
+        })
+        //!
+
+        if (wishlist === null) {
+            if (product != null) {
+                let data = await models.tbl_wishlist.create({
+                    id_user: idUser,
+                    id_product: idProduct
+                })
+
+                res.status(201).json({
+                    message: "Add Wishlist Berhasil",
+                    data: data
+                })
+            } else {
+                res.status(404).json({
+                    message: "Product Tidak Ditemukan"
+                })
+            }
+        } else {
+            res.status(405).json({
+                message: "Sudah pernah menambah wishlist"
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+}
+
+module.exports = { addWishlist }

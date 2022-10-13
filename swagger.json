@@ -1,0 +1,1267 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "project akhir",
+    "description": "",
+    "contact": {}
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/auth/register": {
+      "post": {
+        "description": "",
+        "summary": "Register",
+        "tags": [
+          "auth"
+        ],
+        "operationId": "Register",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegisterRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "description": "",
+        "summary": "Login",
+        "tags": [
+          "auth"
+        ],
+        "operationId": "Login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/auth/relogin": {
+      "post": {
+        "description": "",
+        "summary": "Relogin",
+        "tags": [
+          "auth"
+        ],
+        "operationId": "Relogin",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/users/update": {
+      "put": {
+        "description": "",
+        "summary": "Update",
+        "tags": [
+          "user"
+        ],
+        "operationId": "Update",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "kota",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "alamat",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "no_handphone",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "foto",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "format": "file",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/users/detail": {
+      "get": {
+        "description": "",
+        "summary": "Show",
+        "tags": [
+          "user"
+        ],
+        "operationId": "Show",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/category": {
+      "post": {
+        "description": "",
+        "summary": "Add Category",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "AddCategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddCategoryRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "description": "",
+        "summary": "Get All Category",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "GetAllCategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/product": {
+      "post": {
+        "description": "",
+        "summary": "Add Product",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "AddProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "nama",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "harga",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "keterangan",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "id_kategori",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "gambar",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "format": "file",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "description": "",
+        "summary": "Get All Product",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "GetAllProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/product/54": {
+      "get": {
+        "description": "",
+        "summary": "Get ID Product",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "GetIDProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/product/55": {
+      "put": {
+        "description": "",
+        "summary": "Update Product",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "UpdateProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "nama",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "harga",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "keterangan",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "id_kategori",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/product/56": {
+      "delete": {
+        "description": "",
+        "summary": "Delete Product",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "DeleteProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/order": {
+      "get": {
+        "description": "",
+        "summary": "Get All Order",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "GetAllOrder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/order/60": {
+      "get": {
+        "description": "",
+        "summary": "Get ID Order",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "GetIDOrder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/order/1": {
+      "put": {
+        "description": "",
+        "summary": "Update Status Order",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "UpdateStatusOrder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateStatusOrderRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/product/status/4": {
+      "put": {
+        "description": "",
+        "summary": "Update Status Jual",
+        "tags": [
+          "seller"
+        ],
+        "operationId": "UpdateStatusJual",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateStatusJualRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/buyer/product": {
+      "get": {
+        "description": "",
+        "summary": "Get All Product",
+        "tags": [
+          "buyer"
+        ],
+        "operationId": "GetAllProduct1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/buyer/product/52": {
+      "get": {
+        "description": "",
+        "summary": "Detail Product",
+        "tags": [
+          "buyer"
+        ],
+        "operationId": "DetailProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/buyer/order/1": {
+      "post": {
+        "description": "",
+        "summary": "Add Order",
+        "tags": [
+          "buyer"
+        ],
+        "operationId": "AddOrder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddOrderRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/buyer/wishlist": {
+      "post": {
+        "description": "",
+        "summary": "Add Wishlist",
+        "tags": [
+          "buyer"
+        ],
+        "operationId": "AddWishlist",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddWishlistRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "description": "",
+        "summary": "Get All Wishlist",
+        "tags": [
+          "buyer"
+        ],
+        "operationId": "GetAllWishlist",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/buyer/wishlist/53": {
+      "delete": {
+        "description": "",
+        "summary": "Delete Wishlist",
+        "tags": [
+          "buyer"
+        ],
+        "operationId": "DeleteWishlist",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/seller/history": {
+      "get": {
+        "description": "",
+        "summary": "Seller History",
+        "tags": [
+          "history"
+        ],
+        "operationId": "SellerHistory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/buyer/history": {
+      "get": {
+        "description": "",
+        "summary": "Buyer History",
+        "tags": [
+          "history"
+        ],
+        "operationId": "BuyerHistory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/testing": {
+      "post": {
+        "description": "",
+        "summary": "test",
+        "tags": [
+          "testing code"
+        ],
+        "operationId": "test",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "gambar",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "format": "file",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api": {
+      "get": {
+        "description": "",
+        "summary": "get",
+        "tags": [
+          "testing code"
+        ],
+        "operationId": "get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "default": ""
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "RegisterRequest": {
+      "title": "RegisterRequest",
+      "example": {
+        "nama_lengkap": "pembelipanik@gmail.com",
+        "email": "pembelipanik@gmail.com",
+        "password": "1234"
+      },
+      "type": "object",
+      "properties": {
+        "nama_lengkap": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nama_lengkap",
+        "email",
+        "password"
+      ]
+    },
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "email": "pembelipanik@gmail.com",
+        "password": "1234"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "AddCategoryRequest": {
+      "title": "AddCategoryRequest",
+      "example": {
+        "nama_kategori": "Kesehatan"
+      },
+      "type": "object",
+      "properties": {
+        "nama_kategori": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nama_kategori"
+      ]
+    },
+    "UpdateStatusOrderRequest": {
+      "title": "UpdateStatusOrderRequest",
+      "example": {
+        "status": true
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "UpdateStatusJualRequest": {
+      "title": "UpdateStatusJualRequest",
+      "example": {
+        "berhasil_dijual": true
+      },
+      "type": "object",
+      "properties": {
+        "berhasil_dijual": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "berhasil_dijual"
+      ]
+    },
+    "AddOrderRequest": {
+      "title": "AddOrderRequest",
+      "example": {
+        "harga_tawar": 2000
+      },
+      "type": "object",
+      "properties": {
+        "harga_tawar": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "harga_tawar"
+      ]
+    },
+    "AddWishlistRequest": {
+      "title": "AddWishlistRequest",
+      "example": {
+        "idProduct": 2
+      },
+      "type": "object",
+      "properties": {
+        "idProduct": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "idProduct"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "auth",
+      "description": ""
+    },
+    {
+      "name": "user",
+      "description": ""
+    },
+    {
+      "name": "seller",
+      "description": ""
+    },
+    {
+      "name": "buyer",
+      "description": ""
+    },
+    {
+      "name": "history",
+      "description": ""
+    },
+    {
+      "name": "testing code",
+      "description": ""
+    }
+  ]
+}
